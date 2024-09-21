@@ -34,11 +34,11 @@ def main():
             tree_root = car_id3.build_decision_tree(train_data, data_desc["attributes"])
 
             # Evaluate on the test set
-            misclassified_count_test = sum(car_id3.make_prediction(tree_root, t) != t["label"] for t in test_data)
+            misclassified_count_test = sum(car_id3.predict(tree_root, t) != t["label"] for t in test_data)
             error_result[heuristic]["testing"]["error_perc"] = round((misclassified_count_test / len(test_data)) * 100, 3)
 
             # Evaluate on the training set
-            misclassified_count_train = sum(car_id3.make_prediction(tree_root, t) != t["label"] for t in train_data)
+            misclassified_count_train = sum(car_id3.predict(tree_root, t) != t["label"] for t in train_data)
             error_result[heuristic]["training"]["error_perc"] = round((misclassified_count_train / len(train_data)) * 100, 3)
         
         error_results[i] = error_result

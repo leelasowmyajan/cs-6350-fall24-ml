@@ -135,7 +135,7 @@ class ID3_ALGO:
 
         return treenode
 
-    def make_prediction(self, treenode, data):
+    def predict(self, treenode, data):
         """Traverse the tree and make a prediction for the data."""
         #if no children means it is leaf node
         if len(treenode.children) == 0:
@@ -143,5 +143,5 @@ class ID3_ALGO:
         else:
             attribute = treenode.label
             value = data.get(attribute)
-            return self.make_prediction(treenode.children[value], data)
+            return self.predict(treenode.children[value], data)
 

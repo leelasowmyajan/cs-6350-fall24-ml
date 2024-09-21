@@ -51,11 +51,11 @@ def main():
                 tree_root = bank_id3.build_decision_tree(train_data_current, data_desc["attributes"])
 
                 # Evaluate on the test set
-                misclassified_count_test = sum(bank_id3.make_prediction(tree_root, t) != t["y"] for t in test_data_current)
+                misclassified_count_test = sum(bank_id3.predict(tree_root, t) != t["y"] for t in test_data_current)
                 error_result[heuristic]["testing"]["error_perc"] = round((misclassified_count_test / len(test_data_current)) * 100, 3)
 
                 # Evaluate on the training set
-                misclassified_count_train = sum(bank_id3.make_prediction(tree_root, t) != t["y"] for t in train_data_current)
+                misclassified_count_train = sum(bank_id3.predict(tree_root, t) != t["y"] for t in train_data_current)
                 error_result[heuristic]["training"]["error_perc"] = round((misclassified_count_train / len(train_data_current)) * 100, 3)
 
             error_results[data_type][i] = error_result
