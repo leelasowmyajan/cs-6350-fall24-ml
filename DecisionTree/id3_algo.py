@@ -89,7 +89,7 @@ class ID3_ALGO:
         treenode.depth = depth
 
         # Return node if same label
-        if len(set([e[self.label] for e in data])) == 1:
+        if len(set([entry[self.label] for entry in data])) == 1:
             treenode.label = data[0][self.label]
             return treenode
 
@@ -115,7 +115,7 @@ class ID3_ALGO:
         for value in attributes[best_attribute]:
 
             #Calculating subset of the data based on specific attribute and its value
-            subset = [e for e in data if e[best_attribute] == value]
+            subset = [entry for entry in data if entry[best_attribute] == value]
             
             if len(subset) == 0:
                 child = Treenode()
