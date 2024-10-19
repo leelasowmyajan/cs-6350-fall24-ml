@@ -1,0 +1,7 @@
+Average Bias (Single Tree): 0.37275200000000003
+Average Variance (Single Tree): 0.0006475855171034208
+Average General Squared Error (Single Tree): 0.37339958551710345
+
+Average Bias (Bagged Trees): 0.37721
+Average Variance (Bagged Trees): 0.00024502900580116024
+Average General Squared Error (Bagged Trees): 0.3774550290058012
