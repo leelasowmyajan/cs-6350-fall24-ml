@@ -25,11 +25,11 @@ def main():
 
         # Train a bagged model based on the 1,000 training examples and learn trees
         bag_model = bagging.Bagging("y", sample_count)
-        bag_model.bag(training_subset, utilities.attributes, utilities.num_iterations)
+        bag_model.train_ensemble(training_subset, utilities.attributes, utilities.num_iterations)
         bagging_trees.append(bag_model)
 
         # For comparison, pick the first tree in each run to get individual trees
-        single_trees.append(bag_model.get_hypothesis(0))
+        single_trees.append(bag_model.get_learner(0))
 
     print("Finished building trees...")
 
@@ -42,7 +42,7 @@ def main():
         single_tree_predictions.append(single_predictions)
 
         # Bagged tree predictions
-        bagged_predictions = [bagging_trees[t].classify(test_data.iloc[i]) for t in range(utilities.tree_number)]
+        bagged_predictions = [bagging_trees[t].predict_with_ensemble(test_data.iloc[i]) for t in range(utilities.tree_number)]
         bagged_tree_predictions.append(bagged_predictions)
 
     print("Finished generating predictions...")

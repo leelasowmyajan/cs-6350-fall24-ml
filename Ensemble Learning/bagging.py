@@ -4,60 +4,30 @@ import utilities
 import pandas as pd
 
 class Bagging:
-    def __init__(self, label, sub_sample_count, heuristic='entropy', debug=False) -> None:
-        self._label = label
+    def __init__(self, target_label, sample_size, heuristic='entropy', debug_mode=False) -> None:
+        self._target_label = target_label
         self._heuristic = heuristic
-        self._hypotheses = [] # all hypotheses (trees) generated from ID3
-        self._sample_count = sub_sample_count # the number of examples to pull from the training data
+        self._learners = [] 
+        self._sample_size = sample_size 
+        self._debug_mode = debug_mode 
 
-        # Debug Properties
-        self._debug = debug # if true, record each iter of _D and error
+    def train_ensemble(self, data, features, num_iterations=250):
+        for _ in range(num_iterations):
+            self.train_single_learner(data, features)
 
-    def bag(self, examples, attributes, T=250):
-        '''
-            Run single_boost T number of times.
-        '''
-        
-        for t in range(T):
-            self.single_bag(examples, attributes)
+    def train_single_learner(self, data, features):
+        sub_samples = data.sample(n=self._sample_size, replace=True)
+        root = id3_algo.ID3_ALGO_EXTENDED(self._target_label, heuristic=self._heuristic).build_decision_tree(sub_samples.to_dict(orient="records"), features)        
+        self._learners.append(root)
 
-    def single_bag(self, examples, attributes):
-        '''
-            Commit 1 additional tree to be bagged.
-        '''
+    def predict_with_ensemble(self, instance):
+        vote_sum = 0
+        for learner in self._learners: 
+            vote_sum += int(learner.predict(instance))
+        return np.sign(vote_sum)
 
-        # Get X number of rows, determined before entering tree creation
-        sub_samples = examples.sample(n=self._sample_count, replace=True)
-
-        # Find a classifier h_t whose weighted classification error is better than chance
-        # >>> Just get the label with the best gain
-        root = id3_algo.ID3_ALGO_EXTENDED(self._label, heuristic=self._heuristic).build_decision_tree(sub_samples.to_dict(orient="records"), attributes)
-        
-        # add it to the hypotheses list along with its weight (vote)
-        self._hypotheses.append(root)
-
-    def classify(self, inst):
-        vote = 0
-
-        for h in self._hypotheses:
-            vote += int(h.predict(inst)) # will return either -1 or 1, no average needed
-        
-        # if > 0, we classify as 1
-        # if < 0, we classify as -1
-        return np.sign(vote)
-    
-    def verbose_classify(self, inst):
-        vote = 0
-
-        for i in range(len(self._hypotheses)):
-            res = int(self._hypotheses[i].predict(inst))
-            print("h (", str(self._hypotheses[i].label), ")", i, "says", str(res))
-            vote += res
-        
-        return np.sign(vote)
-
-    def get_hypothesis(self, index):
-        return self._hypotheses[index]
+    def get_learner(self, index):
+        return self._learners[index]
 
 def main():
     print("Starting Bagging Tests...")
@@ -74,7 +44,7 @@ def main():
     num_test_samples = len(test_data.index)
 
     # Initialize Bagging model
-    bagging_model = Bagging("y", sample_len, debug=utilities.debug_mode)
+    bagging_model = Bagging("y", sample_len, debug_mode=utilities.debug_mode)
 
     # Initialize lists to store errors over iterations
     training_error_percentage = []
@@ -90,16 +60,16 @@ def main():
         print(f"\n=== Bagging Iteration {iteration + 1} ===")
 
         # Train the Bagging model
-        bagging_model.single_bag(train_data, utilities.attributes)
+        bagging_model.train_single_learner(train_data, utilities.attributes)
 
         # Evaluate the model on the training set
-        total_train_errors = sum([1 for i in range(num_train_samples) if train_data["y"][i] != bagging_model.classify(train_data.iloc[i])])
+        total_train_errors = sum([1 for i in range(num_train_samples) if train_data["y"][i] != bagging_model.predict_with_ensemble(train_data.iloc[i])])
         training_error_percentage.append((total_train_errors / num_train_samples) * 100)
         training_error_total.append(total_train_errors)
         print(f"Training: Total Errors: {total_train_errors}/{num_train_samples} ({(total_train_errors / num_train_samples) * 100:.2f}%)")
 
         # Evaluate the model on the testing set
-        total_test_errors = sum([1 for i in range(num_test_samples) if test_data["y"][i] != bagging_model.classify(test_data.iloc[i])])
+        total_test_errors = sum([1 for i in range(num_test_samples) if test_data["y"][i] != bagging_model.predict_with_ensemble(test_data.iloc[i])])
         testing_error_percentage.append((total_test_errors / num_test_samples) * 100)
         testing_error_total.append(total_test_errors)
         print(f"Testing: Total Errors: {total_test_errors}/{num_test_samples} ({(total_test_errors / num_test_samples) * 100:.2f}%)")

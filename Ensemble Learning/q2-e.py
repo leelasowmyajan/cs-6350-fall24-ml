@@ -25,11 +25,11 @@ def main():
 
         # Train a bagged model based on the 1,000 training examples and learn trees
         forest_model = randomforest.RandomForest("y", sample_count, utilities.sub_attribute_len)
-        forest_model.random_forest(training_subset, utilities.attributes, utilities.num_iterations)
+        forest_model.train_forest(training_subset, utilities.attributes, utilities.num_iterations)
         forest_trees.append(forest_model)
 
         # For comparison, pick the first tree in each run to get individual trees
-        single_trees.append(forest_model.get_hypothesis(0))
+        single_trees.append(forest_model.get_tree(0))
 
     print("Finished building trees...")
 
@@ -42,7 +42,7 @@ def main():
         single_tree_predictions.append(single_predictions)
 
         # Bagged tree predictions
-        bagged_predictions = [forest_trees[t].classify(test_data.iloc[i]) for t in range(utilities.tree_number)]
+        bagged_predictions = [forest_trees[t].predict_with_forest(test_data.iloc[i]) for t in range(utilities.tree_number)]
         bagged_tree_predictions.append(bagged_predictions)
 
     print("Finished generating predictions...")
