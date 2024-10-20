@@ -3,8 +3,6 @@ import numpy as np
 import pandas as pd
 import utilities
 
-utilities.num_iterations = 2
-
 def main():
     print("Running Q3 - Credit Default Dataset Random Forest")
 

@@ -48,6 +48,14 @@ To run the Random Forest implementation:
 python3 q2-e.py
 ```
 
+### Running Q3 (Bonus Question)
+To run the Q3 Bonus Question implementation:
+```bash
+python3 q3_adaboost.py
+python3 q3_bagging.py
+python3 q3_randomforest.py
+```
+
 ### Tweaking Parameters
 If you want to modify parameters like the **number of iterations** or the **number of trees**, you can adjust the values in the `utilities.py` file located in this folder.
 

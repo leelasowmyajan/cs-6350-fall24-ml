@@ -145,16 +145,15 @@ def plot_forest_train_test_data(result_csv, plot_filename):
     plt.show()
 
 def main():
-    #plot_adaboost_data(utilities.results_adaboost_csv, 'adaboost_plot.png')
+    plot_adaboost_data(utilities.results_adaboost_csv, 'adaboost_plot.png')
     #plot_stump_data(utilities.results_stump_csv, 'decision_stump_plot.png')
     #plot_bagging_data(utilities.results_bagging_csv, 'bagging_plot.png')
-    
     #plot_forest_train_data(utilities.results_forest_csv, 'forest_train_plot.png')
     #plot_forest_test_data(utilities.results_forest_csv, 'forest_test_plot.png')
     #plot_forest_train_test_data(utilities.results_forest_csv, 'forest_plot.png')
     #plot_adaboost_data(utilities.results_adaboost_credit_csv, 'adaboost_credit_plot.png')
     #plot_bagging_data(utilities.results_bagging_credit_csv, 'bagging_credit_plot.png')
-    plot_forest_train_test_data(utilities.results_forest_credit_csv, 'forest_credit_plot.png')
+    #plot_forest_train_test_data(utilities.results_forest_credit_csv, 'forest_credit_plot.png')
 
 if __name__ == "__main__":
     main()
