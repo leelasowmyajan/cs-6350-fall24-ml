@@ -55,10 +55,13 @@ def main():
     print("\nStandard Perceptron Learned Weight Vector:")
     print(learned_weights)
 
-    # predictions and error calculation
+    # predictions 
     predictions = s_perceptron.predict_labels(test_features)
+
+    #error calculation
     incorrect_count = np.sum(test_labels.flatten() != predictions)
     error_percentage = (incorrect_count / len(test_labels)) * 100
+    
     # displaying average prediction error
     print("\nStandard Perceptron Test Results:")
     print(f"Incorrect Predictions: {incorrect_count} out of {len(test_labels)}")
