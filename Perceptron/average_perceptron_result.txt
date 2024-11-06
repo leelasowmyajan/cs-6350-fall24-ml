@@ -1,0 +1,8 @@
+
+Average Perceptron Learned Weight Vector:
+[-42093.1207519  -29067.298536   -29696.90216374  -9243.59198232
+  33716.        ]
+
+Average Perceptron Test Results:
+Incorrect Predictions: 7 out of 500
+Average Prediction Error: 1.40%
