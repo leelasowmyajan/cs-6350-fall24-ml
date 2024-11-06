@@ -1,0 +1,7 @@
+
+Standard Perceptron Learned Weight Vector:
+[-5.7833785 -4.008966  -4.5758838 -0.9758886  6.3      ]
+
+Standard Perceptron Test Results:
+Incorrect Predictions: 4 out of 500
+Average Prediction Error: 0.80%
