@@ -1,0 +1,39 @@
+======== Running Primal SVM with Stochastic Sub-Gradient Descent ========
+
+--- Evaluating for Hyperparameter C = 0.1145 ---
+
+Learning Rate Schedule 1
+  Average Weights: [-1.08825616 -0.74717832 -0.78953578 -0.12053949  1.27068392]
+  Training Error: 11.0 (1.26%)
+  Testing Error: 5.8 (1.16%)
+
+Learning Rate Schedule 2
+  Average Weights: [-2.67866726 -1.65416678 -1.74915359 -0.48396947  1.90811495]
+  Training Error: 33.5 (3.84%)
+  Testing Error: 21.7 (4.34%)
+
+--- Evaluating for Hyperparameter C = 0.5727 ---
+
+Learning Rate Schedule 1
+  Average Weights: [-3.01549392 -1.97198134 -1.97107344 -0.56020632  2.86021314]
+  Training Error: 15.4 (1.77%)
+  Testing Error: 9.1 (1.82%)
+
+Learning Rate Schedule 2
+  Average Weights: [-11.09120144  -8.01062509  -6.66895293  -2.65502719   7.86208757]
+  Training Error: 49.6 (5.69%)
+  Testing Error: 30.4 (6.08%)
+
+--- Evaluating for Hyperparameter C = 0.8018 ---
+
+Learning Rate Schedule 1
+  Average Weights: [-3.79100158 -2.41110387 -2.68693639 -0.63564552  3.62686197]
+  Training Error: 18.0 (2.06%)
+  Testing Error: 11.2 (2.24%)
+
+Learning Rate Schedule 2
+  Average Weights: [-15.11488125 -10.58452112 -10.1403325   -4.67871452  11.37088518]
+  Training Error: 32.3 (3.70%)
+  Testing Error: 22.3 (4.46%)
+
+======== Primal SVM Evaluation Complete ========

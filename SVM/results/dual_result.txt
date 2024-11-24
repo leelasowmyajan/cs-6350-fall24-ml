@@ -1,0 +1,21 @@
+======== Running Dual SVM with SLSQP Optimization ========
+
+--- Evaluating for Hyperparameter C = 0.1145 ---
+  Weights: [-0.94292628 -0.65149178 -0.73372189 -0.0410219 ]
+  Bias: 1.0994686519921586
+  Training Error: 8 (0.92%)
+  Testing Error: 5 (1.00%)
+
+--- Evaluating for Hyperparameter C = 0.5727 ---
+  Weights: [-1.56393881 -1.01405265 -1.18065141 -0.15651773]
+  Bias: 1.5581619670406686
+  Training Error: 8 (0.92%)
+  Testing Error: 6 (1.20%)
+
+--- Evaluating for Hyperparameter C = 0.8018 ---
+  Weights: [-2.04255247 -1.2806867  -1.51351432 -0.2490524 ]
+  Bias: 1.8939865140465066
+  Training Error: 10 (1.15%)
+  Testing Error: 7 (1.40%)
+
+======== Dual SVM Evaluation Complete ========
