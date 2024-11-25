@@ -1,0 +1,105 @@
+======== Running Gaussian Dual SVM with SLSQP Optimization ========
+
+--- Evaluating for Gamma = 0.1 ---
+
+   === Evaluating for Hyperparameter C = 0.1145 ===
+      Bias: -0.11695687718840386
+      Number of Support Vectors: 869
+      Training Error: 53 (6.08%)
+      Testing Error: 196 (39.20%)
+
+   === Evaluating for Hyperparameter C = 0.5727 ===
+      Bias: -0.1639420500752634
+      Number of Support Vectors: 869
+      Training Error: 0 (0.00%)
+      Testing Error: 107 (21.40%)
+
+   === Evaluating for Hyperparameter C = 0.8018 ===
+      Bias: -0.16312769981560582
+      Number of Support Vectors: 868
+      Training Error: 0 (0.00%)
+      Testing Error: 91 (18.20%)
+
+--- Evaluating for Gamma = 0.5 ---
+
+   === Evaluating for Hyperparameter C = 0.1145 ===
+      Bias: -0.1144763635802715
+      Number of Support Vectors: 825
+      Training Error: 0 (0.00%)
+      Testing Error: 45 (9.00%)
+
+   === Evaluating for Hyperparameter C = 0.5727 ===
+      Bias: -0.17384799938324588
+      Number of Support Vectors: 731
+      Training Error: 0 (0.00%)
+      Testing Error: 7 (1.40%)
+
+   === Evaluating for Hyperparameter C = 0.8018 ===
+      Bias: -0.16645083500899063
+      Number of Support Vectors: 694
+      Training Error: 0 (0.00%)
+      Testing Error: 5 (1.00%)
+
+--- Evaluating for Gamma = 1 ---
+
+   === Evaluating for Hyperparameter C = 0.1145 ===
+      Bias: -0.14252772625477617
+      Number of Support Vectors: 805
+      Training Error: 0 (0.00%)
+      Testing Error: 11 (2.20%)
+
+   === Evaluating for Hyperparameter C = 0.5727 ===
+      Bias: -0.1665485882910351
+      Number of Support Vectors: 556
+      Training Error: 0 (0.00%)
+      Testing Error: 2 (0.40%)
+
+   === Evaluating for Hyperparameter C = 0.8018 ===
+      Bias: -0.16240876377090951
+      Number of Support Vectors: 528
+      Training Error: 0 (0.00%)
+      Testing Error: 2 (0.40%)
+
+--- Evaluating for Gamma = 5 ---
+
+   === Evaluating for Hyperparameter C = 0.1145 ===
+      Bias: -0.12395081535110504
+      Number of Support Vectors: 442
+      Training Error: 3 (0.34%)
+      Testing Error: 2 (0.40%)
+
+   === Evaluating for Hyperparameter C = 0.5727 ===
+      Bias: -0.12384273131610248
+      Number of Support Vectors: 208
+      Training Error: 0 (0.00%)
+      Testing Error: 0 (0.00%)
+
+   === Evaluating for Hyperparameter C = 0.8018 ===
+      Bias: -0.1190117132197657
+      Number of Support Vectors: 194
+      Training Error: 0 (0.00%)
+      Testing Error: 0 (0.00%)
+
+--- Evaluating for Gamma = 100 ---
+
+   === Evaluating for Hyperparameter C = 0.1145 ===
+      Bias: 0.12317699290482166
+      Number of Support Vectors: 290
+      Training Error: 12 (1.38%)
+      Testing Error: 4 (0.80%)
+
+   === Evaluating for Hyperparameter C = 0.5727 ===
+      Bias: 0.24617112385152534
+      Number of Support Vectors: 116
+      Training Error: 3 (0.34%)
+      Testing Error: 2 (0.40%)
+
+   === Evaluating for Hyperparameter C = 0.8018 ===
+      Bias: 0.255167806787986
+      Number of Support Vectors: 99
+      Training Error: 3 (0.34%)
+      Testing Error: 2 (0.40%)
+
+Best Combination: Gamma = 5, C = 0.572737686139748, Testing Error = 0.40%
+
+======== Gaussian Dual SVM Evaluation Complete ========

@@ -6,7 +6,8 @@ C = [100/873, 500/873, 700/873]
 T = 100
 INITIAL_LR = 0.1
 LR_DECAY = 0.01
-
+LR = [0.1, 0.5, 1, 5, 100]
+C_OVERLAP = 500/873
 
 bank_note_train = "bank-note/train.csv" 
 bank_note_test = "bank-note/test.csv"

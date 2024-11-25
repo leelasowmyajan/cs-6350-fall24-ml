@@ -1,0 +1,6 @@
+======== Evaluating Overlap of Support Vectors ========
+Overlap between Gamma = 0.1 and Gamma = 0.5: 731 support vectors
+Overlap between Gamma = 0.5 and Gamma = 1: 554 support vectors
+Overlap between Gamma = 1 and Gamma = 5: 198 support vectors
+Overlap between Gamma = 5 and Gamma = 100: 73 support vectors
+======== Overlap Evaluation Complete ========
