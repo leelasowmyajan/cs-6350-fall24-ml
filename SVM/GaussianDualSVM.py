@@ -56,6 +56,13 @@ class GaussianDualSVM:
             2 * np.dot(feature_set_1, feature_set_2.T)
         )
         return np.exp(-sq_dists / gamma)
+    
+    def gaussian_kernel(self, feature_set_1, feature_set_2, gamma):
+        """
+        Compute the Gaussian kernel between two feature vectors.
+        """
+        sq_dist = np.sum((feature_set_1 - feature_set_2) ** 2)
+        return np.exp(-sq_dist / gamma)
 
     def predict(self, features, train_features, train_labels, gamma):
         """

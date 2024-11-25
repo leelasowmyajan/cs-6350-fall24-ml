@@ -1,0 +1,22 @@
+======== Running Kernel Perceptron with Gaussian Kernel ========
+
+--- Evaluating for Gamma = 0.1 ---
+      Training Error: 0 (0.00%)
+      Testing Error: 1 (0.20%)
+
+--- Evaluating for Gamma = 0.5 ---
+      Training Error: 0 (0.00%)
+      Testing Error: 2 (0.40%)
+
+--- Evaluating for Gamma = 1 ---
+      Training Error: 0 (0.00%)
+      Testing Error: 2 (0.40%)
+
+--- Evaluating for Gamma = 5 ---
+      Training Error: 0 (0.00%)
+      Testing Error: 2 (0.40%)
+
+--- Evaluating for Gamma = 100 ---
+      Training Error: 0 (0.00%)
+      Testing Error: 0 (0.00%)
+======== Kernel Perceptron with Gaussian Kernel Complete ========
