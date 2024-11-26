@@ -110,7 +110,7 @@ def gaussian_dual_svm(train_features, train_labels, test_features, test_labels):
                 best_test_error = test_error_percent
                 best_combination = (gamma, c)
     
-    print(f"\nBest Combination: Gamma = {best_combination[0]}, C = {best_combination[1]}, Testing Error = {test_error_percent:.2f}%")
+    print(f"\nBest Combination: Gamma = {best_combination[0]}, C = {best_combination[1]}")
     print("\n======== Gaussian Dual SVM Evaluation Complete ========")
 
 def overlap(train_features, train_labels):

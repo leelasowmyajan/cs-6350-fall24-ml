@@ -100,6 +100,6 @@
       Training Error: 3 (0.34%)
       Testing Error: 2 (0.40%)
 
-Best Combination: Gamma = 5, C = 0.572737686139748, Testing Error = 0.40%
+Best Combination: Gamma = 5, C = 0.572737686139748
 
 ======== Gaussian Dual SVM Evaluation Complete ========
