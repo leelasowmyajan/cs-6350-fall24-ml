@@ -10,7 +10,7 @@ To run the code, make sure you have the following libraries installed:
 
 You can install them using:
 ```bash
-pip install pandas "numpy<2" torch
+pip install pandas numpy torch
 ```
 
 ## How to Run the Code
