@@ -1,0 +1,126 @@
+Starting neural network training with various configurations...
+Completed training for 30 different configurations.
+
+Final Results for Each Configuration:
+
+Configuration: Width=5, Depth=3, Activation=Tanh
+	Final Training Error: 0.026553
+	Test Error: 0.019651
+
+Configuration: Width=5, Depth=3, Activation=ReLU
+	Final Training Error: 0.043374
+	Test Error: 0.049069
+
+Configuration: Width=5, Depth=5, Activation=Tanh
+	Final Training Error: 0.007935
+	Test Error: 0.009112
+
+Configuration: Width=5, Depth=5, Activation=ReLU
+	Final Training Error: 0.053391
+	Test Error: 0.047351
+
+Configuration: Width=5, Depth=9, Activation=Tanh
+	Final Training Error: 0.014771
+	Test Error: 0.011768
+
+Configuration: Width=5, Depth=9, Activation=ReLU
+	Final Training Error: 0.010899
+	Test Error: 0.014506
+
+Configuration: Width=10, Depth=3, Activation=Tanh
+	Final Training Error: 0.014075
+	Test Error: 0.021454
+
+Configuration: Width=10, Depth=3, Activation=ReLU
+	Final Training Error: 0.010856
+	Test Error: 0.012900
+
+Configuration: Width=10, Depth=5, Activation=Tanh
+	Final Training Error: 0.016353
+	Test Error: 0.019570
+
+Configuration: Width=10, Depth=5, Activation=ReLU
+	Final Training Error: 0.003903
+	Test Error: 0.007647
+
+Configuration: Width=10, Depth=9, Activation=Tanh
+	Final Training Error: 0.014361
+	Test Error: 0.013731
+
+Configuration: Width=10, Depth=9, Activation=ReLU
+	Final Training Error: 0.001122
+	Test Error: 0.001190
+
+Configuration: Width=25, Depth=3, Activation=Tanh
+	Final Training Error: 0.013622
+	Test Error: 0.014192
+
+Configuration: Width=25, Depth=3, Activation=ReLU
+	Final Training Error: 0.009473
+	Test Error: 0.009335
+
+Configuration: Width=25, Depth=5, Activation=Tanh
+	Final Training Error: 0.004748
+	Test Error: 0.005153
+
+Configuration: Width=25, Depth=5, Activation=ReLU
+	Final Training Error: 0.004132
+	Test Error: 0.005486
+
+Configuration: Width=25, Depth=9, Activation=Tanh
+	Final Training Error: 0.001700
+	Test Error: 0.002236
+
+Configuration: Width=25, Depth=9, Activation=ReLU
+	Final Training Error: 0.000424
+	Test Error: 0.001083
+
+Configuration: Width=50, Depth=3, Activation=Tanh
+	Final Training Error: 0.007347
+	Test Error: 0.007935
+
+Configuration: Width=50, Depth=3, Activation=ReLU
+	Final Training Error: 0.006437
+	Test Error: 0.008540
+
+Configuration: Width=50, Depth=5, Activation=Tanh
+	Final Training Error: 0.005719
+	Test Error: 0.005343
+
+Configuration: Width=50, Depth=5, Activation=ReLU
+	Final Training Error: 0.003768
+	Test Error: 0.003512
+
+Configuration: Width=50, Depth=9, Activation=Tanh
+	Final Training Error: 0.001496
+	Test Error: 0.007280
+
+Configuration: Width=50, Depth=9, Activation=ReLU
+	Final Training Error: 0.000786
+	Test Error: 0.000273
+
+Configuration: Width=100, Depth=3, Activation=Tanh
+	Final Training Error: 0.005856
+	Test Error: 0.007180
+
+Configuration: Width=100, Depth=3, Activation=ReLU
+	Final Training Error: 0.005628
+	Test Error: 0.005257
+
+Configuration: Width=100, Depth=5, Activation=Tanh
+	Final Training Error: 0.003618
+	Test Error: 0.006376
+
+Configuration: Width=100, Depth=5, Activation=ReLU
+	Final Training Error: 0.000631
+	Test Error: 0.001276
+
+Configuration: Width=100, Depth=9, Activation=Tanh
+	Final Training Error: 0.001487
+	Test Error: 0.004283
+
+Configuration: Width=100, Depth=9, Activation=ReLU
+	Final Training Error: 0.000034
+	Test Error: 0.000036
+
+Training and evaluation completed.

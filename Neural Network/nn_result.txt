@@ -1,0 +1,65 @@
+========== Neural Network Implementation ==========
+
+========== BACKPROPAGATION CHECK ==========
+Testing the back-propagation algorithm with Problem 3 example...
+=== Forward Propagation ===
+Layer 0: [1 1 1]
+Layer 1: [1.         0.00247262 0.99752738]
+Layer 2: [1.         0.01802994 0.98197006]
+Layer 3: [-2.43689523]
+Neural Network Classification Result: [-1.]
+
+=== Backward Propagation ===
+=== Node Derivatives at Output Layer ===
+[ 3.43689523 -6.87379045  5.15534284]
+
+=== Node Derivatives at Hidden Layer ===
+[12.02913329 24.05826659 36.08739988]
+
+Computed Gradients: [[list([0.05933993806811991, 0.08900990710217566])
+  list([0.05933993806811991, 0.08900990710217566])
+  list([0.05933993806811991, 0.08900990710217566])]
+ [list([-0.1216994749848413, 0.09127460623863048])
+  list([-0.000300916939997813, 0.00022568770499835857])
+  list([-0.1213985580448435, 0.09104891853363213])]
+ [list([-3.436895226556018]) list([-0.0619669984635771])
+  list([-3.3749282280924415])]]
+Backpropagation test completed successfully.
+
+========== RANDOM INITIALIZATION CHECK ==========
+Training the neural network with random weight initialization...
+
+Finished evaluating NN with hidden layer size 5.
+Finished evaluating NN with hidden layer size 10.
+Finished evaluating NN with hidden layer size 25.
+Finished evaluating NN with hidden layer size 50.
+Finished evaluating NN with hidden layer size 100.
+
+Random Initialization Results:
+Hidden Layer Size: 5, Training Error: 0.9174%, Testing Error: 1.0000%
+Hidden Layer Size: 10, Training Error: 0.8028%, Testing Error: 0.8000%
+Hidden Layer Size: 25, Training Error: 0.4587%, Testing Error: 0.2000%
+Hidden Layer Size: 50, Training Error: 0.0000%, Testing Error: 0.0000%
+Hidden Layer Size: 100, Training Error: 0.0000%, Testing Error: 0.0000%
+
+Random initialization training and testing completed.
+
+========== ZERO INITIALIZATION CHECK ==========
+Training the neural network with zero weight initialization...
+
+Finished evaluating NN with hidden layer size 5.
+Finished evaluating NN with hidden layer size 10.
+Finished evaluating NN with hidden layer size 25.
+Finished evaluating NN with hidden layer size 50.
+Finished evaluating NN with hidden layer size 100.
+
+Zero Initialization Results:
+Hidden Layer Size: 5, Training Error: 1.1468%, Testing Error: 1.2000%
+Hidden Layer Size: 10, Training Error: 0.9174%, Testing Error: 1.2000%
+Hidden Layer Size: 25, Training Error: 0.9174%, Testing Error: 1.0000%
+Hidden Layer Size: 50, Training Error: 1.1468%, Testing Error: 1.2000%
+Hidden Layer Size: 100, Training Error: 1.1468%, Testing Error: 1.2000%
+
+Zero initialization training and testing completed.
+
+========== Neural Network Implementation Completed ==========
