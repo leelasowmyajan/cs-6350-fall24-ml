@@ -6,10 +6,11 @@ To run the code, make sure you have the following libraries installed:
 
 - **Pandas**
 - **Numpy**
+- **Matplotlib (Optional)**
 
 You can install them using:
 ```bash
-pip install pandas numpy
+pip install pandas numpy matplotlib
 ```
 
 ## How to Run the Code

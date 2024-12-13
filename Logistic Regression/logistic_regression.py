@@ -1,5 +1,6 @@
 import numpy as np
 import utilities
+import matplotlib.pyplot as plt
 
 import warnings
 warnings.filterwarnings("ignore")
@@ -17,6 +18,7 @@ class LogisticRegression():
 
     def train_logreg(self, features, labels, prior_variance = 0, decay_rate = 0.1, learning_rate = 0.01, T=100, printOp=False):
         num_samples = len(features)
+        losses = []
         shuffled_indices = utilities.generate_shuffled_indices(features, T)
         if printOp:
             print("Shuffled indices for each epoch:\n", shuffled_indices)
@@ -26,10 +28,13 @@ class LogisticRegression():
                 sample_features = features[sample_idx]
                 sample_label = labels[sample_idx]
                 gradient = self.gradient_function(sample_features, sample_label, num_samples, prior_variance)
+                loss = self.loss_function(sample_features, sample_label, prior_variance)
+                losses.append(loss)
                 if printOp:
-                    print(f"Sample index: {sample_idx}, Gradient: {gradient}")
+                    print(f"Sample index: {sample_idx}, Gradient: {gradient}, Loss: {loss}")
                 # updating weights using calculated gradient
                 self.weights = self.weights - current_lr * gradient
+        return losses
 
     def lr_sched(self, t, intial_lr, lr_decay):
         return intial_lr / (1 + intial_lr / lr_decay * t)
@@ -73,18 +78,22 @@ class LogisticRegression():
         # predicting label for a single feature vector
         return -1 if np.dot(self.weights, features) <= 0 else 1
 
-def main():
-    print("========== Logistic Regression Implementation ==========\n")
+def validate_using_4Q():
     # defining sample data for problem 4 
     p4_features = np.array([[0.5, -1, 0.3, 1], [-1, -2, -2, 1], [1.5, 0.2, -2.5, 1]])
     p4_labels = np.array([[1], [-1], [1]])
-
     print("========== MAP ESTIMATION CHECK ==========")
     print("Testing MAP estimation with Problem 4 example...")
     # initializing logistic regression model for MAP estimation
     logistic_reg_map = LogisticRegression(len(p4_features[0]), estimation_method="map")
     logistic_reg_map.train_logreg(p4_features, p4_labels, learning_rate=0.0025, prior_variance=3, T=5, printOp=True)
     print("MAP estimation test completed successfully.\n")
+
+def main():
+    print("========== Logistic Regression Implementation ==========\n")
+
+    #validate map
+    #validate_using_4Q()
 
     # loading training and testing datasets
     train_features, train_labels = utilities.read_csv(utilities.bank_note_train)
@@ -142,5 +151,68 @@ def main():
     print(f"Finished testing with {total_combinations} configurations.")
     print("========== Logistic Regression Implementation Completed ==========")
 
+def main_plots():
+    train_features, train_labels = utilities.read_csv(utilities.bank_note_train)
+
+    # Store losses for both MLE and MAP
+    losses_dict = {}
+
+    # MLE
+    logistic_reg_mle = LogisticRegression(num_weights=len(train_features[0]), estimation_method="mle")
+
+    # Train and collect losses for MLE
+    losses_mle = logistic_reg_mle.train_logreg(
+        train_features,
+        train_labels,
+        learning_rate=utilities.INITIAL_LEARNING_RATE,
+        decay_rate=utilities.DECAY_RATE,
+        T=utilities.T,  # Number of epochs from utilities
+    )
+
+    # Compute average losses per epoch for MLE
+    num_samples = len(train_features)
+    avg_losses_mle = [
+        np.mean(losses_mle[i * num_samples : (i + 1) * num_samples])
+        for i in range(utilities.T)
+    ]
+    losses_dict["MLE"] = avg_losses_mle
+
+    # MAP
+    logistic_reg_map = LogisticRegression(num_weights=len(train_features[0]), estimation_method="map")
+
+    # Train and collect losses for MAP (with fixed prior variance)
+    prior_variance = utilities.P_VARIANCES[0]  # Using the first variance as an example
+    losses_map = logistic_reg_map.train_logreg(
+        train_features,
+        train_labels,
+        learning_rate=utilities.INITIAL_LEARNING_RATE,
+        decay_rate=utilities.DECAY_RATE,
+        prior_variance=prior_variance,
+        T=utilities.T,  
+    )
+
+    # Compute average losses per epoch for MAP
+    avg_losses_map = [
+        np.mean(losses_map[i * num_samples : (i + 1) * num_samples])
+        for i in range(utilities.T)
+    ]
+    losses_dict["MAP"] = avg_losses_map
+
+    # Plotting Objective Function Value vs. Epochs for MLE and MAP
+    plt.figure(figsize=(8, 6))
+    for method, avg_losses in losses_dict.items():
+        plt.plot(range(1, utilities.T + 1), avg_losses, label=f"{method} Objective Function")
+    plt.xlabel("T (Epochs)")
+    plt.ylabel("Average Objective Function Value (Loss)")
+    plt.title("Objective Function Value vs. Epochs (MLE vs MAP)")
+    plt.grid()
+    plt.legend()
+    # Save the plot
+    plt.savefig("objective_fn_mle_map_plot.png")
+    print(f"Plot saved.")
+    plt.show()
+
 if __name__ == "__main__":
     main()
+    #uncomment this to generate plot
+    #main_plots() 

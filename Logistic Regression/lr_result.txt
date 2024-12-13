@@ -1,26 +1,5 @@
 ========== Logistic Regression Implementation ==========
 
-========== MAP ESTIMATION CHECK ==========
-Testing MAP estimation with Problem 4 example...
-Shuffled indices for each epoch:
- [array([1, 0, 2]), array([0, 1, 2]), array([0, 1, 2]), array([1, 0, 2]), array([1, 0, 2])]
-Sample index: 1, Gradient: [-1.5 -3.  -3.   1.5]
-Sample index: 0, Gradient: [-0.75142186  1.50784373 -0.44910312 -1.50659373]
-Sample index: 2, Gradient: [-2.26201908 -0.30060924  3.77603302 -1.50925801]
-Sample index: 0, Gradient: [-0.74447468  1.49796574 -0.44921397 -1.49520856]
-Sample index: 1, Gradient: [-1.48972639 -2.9879096  -2.98809294  1.49657168]
-Sample index: 2, Gradient: [-2.23138048 -0.29555577  3.73078563 -1.4900433 ]
-Sample index: 0, Gradient: [-0.73915397  1.49603705 -0.44843848 -1.49061793]
-Sample index: 1, Gradient: [-1.47508413 -2.96436677 -2.96628017  1.48671906]
-Sample index: 2, Gradient: [-2.20195858 -0.29070342  3.6873785  -1.47159517]
-Sample index: 1, Gradient: [-1.45652719 -2.93050607 -2.93557517  1.47106841]
-Sample index: 0, Gradient: [-0.73531007  1.50128503 -0.4468533  -1.49216748]
-Sample index: 2, Gradient: [-2.17360691 -0.28604411  3.64556573 -1.45380755]
-Sample index: 1, Gradient: [-1.44304233 -2.90897481 -2.91557755  1.46211095]
-Sample index: 0, Gradient: [-0.73026636  1.49915572 -0.44610684 -1.48760041]
-Sample index: 2, Gradient: [-2.14634177 -0.28156316  3.6053969  -1.43670544]
-MAP estimation test completed successfully.
-
 Starting testing with 16 configurations...
 Testing with variance=0.01
 	MLE Training Error: 0.9174%
