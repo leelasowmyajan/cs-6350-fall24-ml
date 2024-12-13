@@ -24,8 +24,7 @@ python3 logistic_regression.py
 
 ### Tweaking Parameters
 If you want to modify parameters like:
-**Prior variance (P_VARIANCES)**, **maximum number of epochs (T)**, **initial γ (INITIAL_LEARNING_RATE)**, **γ decay factor - d (DECAY_RATE)**,
-you can adjust the values in the `utilities.py` file located in this folder.
+**Prior variance (P_VARIANCES)**, **maximum number of epochs (T)**, **initial γ (INITIAL_LEARNING_RATE)**, **γ decay factor - d (DECAY_RATE)**, you can adjust the values in the `utilities.py` file located in this folder.
 
 ## Results
 
